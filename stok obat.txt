@@ -1,0 +1,42 @@
+
+SQL*Plus: Release 11.2.0.2.0 Production on Tue Jan 12 19:19:01 2021
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> conn system;
+Enter password:
+Connected.
+SQL> create table stok_obat
+  2  (kode_obat varchar (10) not null ,
+  3  nama_obat varchar (15) not null,
+  4  stok varchar (5) not null,
+  5  satuan varchar (6) not null,
+  6  harga_pokok varchar (15) not null);
+
+Table created.
+
+SQL> insert all
+  2  into stok_obat values ('1001','Amoxcillin','15','Strip','Rp 5.000')
+  3  into stok_obat values ('1002','Paracetamol','10','Strip','Rp 3.000')
+  4  into stok_obat values ('1003','Ambroxol','5','Botol','Rp 10.000')
+  5  into stok_obat values ('1004','CTM','20','Pcs','Rp 1.000')
+  6  into stok_obat values ('1005','Mylanta','2','Botol','Rp 15.000')
+  7  select * from dual;
+
+5 rows created.
+
+SQL> select * from stok_obat;
+
+KODE_OBAT  NAMA_OBAT       STOK  SATUAN HARGA_POKOK
+---------- --------------- ----- ------ ---------------
+1001       Amoxcillin      15    Strip  Rp 5.000
+1002       Paracetamol     10    Strip  Rp 3.000
+1003       Ambroxol        5     Botol  Rp 10.000
+1004       CTM             20    Pcs    Rp 1.000
+1005       Mylanta         2     Botol  Rp 15.000
+
+SQL> commit;
+
+Commit complete.
+
+SQL>
